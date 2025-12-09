@@ -2,86 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SIBA Trade Food</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #f9f7f0;
-      color: #2d4a3a;
-      font-family: 'Libre Baskerville', serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #0b5e32;
+      padding: 20px;
       text-align: center;
-      padding: 40px 20px;
+      color: white;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+
+    header img {
+      width: 140px;
+      height: auto;
+      margin-bottom: 10px;
     }
-    .logo {
-      width: 280px;
-      margin: 0 auto 40px;
-      filter: drop-shadow(0 4px 10px rgba(0,90,60,0.15));
+
+    nav {
+      background: #084b27;
+      padding: 10px;
+      text-align: center;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      color: #1b5e3a;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 20px auto;
-      color: #3a5f4a;
-    }
-    .btn {
-      display: inline-block;
-      margin: 30px 10px;
-      padding: 14px 32px;
-      background: #1b5e3a;
-      color: #f9f7f0;
+
+    nav a {
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
-      border-radius: 50px;
       font-weight: bold;
-      transition: all 0.3s;
     }
-    .btn:hover {
-      background: #0f3f27;
-      transform: translateY(-3px);
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
     }
-    footer {
-      margin-top: 100px;
-      font-size: 0.9rem;
-      color: #666;
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #0b5e32;
+      font-weight: bold;
+      text-align: center;
     }
-    @media (max-width: 640px) {
-      h1 { font-size: 2.5rem; }
-      .logo { width: 220px; }
+
+    .footer {
+      background: #0b5e32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://files.catbox.moe/your-logo-file-name.png" alt="SIBA Trade Food Logo" class="logo">
-    <!-- ↑ Replace the link above with your actual logo URL (you can upload it to catbox.moe, imgur, etc.) -->
 
-    <h1>SIBA Trade Food</h1>
-    <p>Premium quality food trading and distribution since [year]. We connect the finest producers with markets worldwide.</p>
-    
-    <p>
-      <a href="mailto:info@sibatradefood.com" class="btn">Contact Us</a>
-      <a href="tel:+1234567890" class="btn">Call Now</a>
-    </p>
+<header>
+  <img src="logo.png" alt="SIBA Trade Food Logo" />
+  <h1>SIBA TRADE FOOD</h1>
+  <p>Import · Export · Distribution · B2B Solutions</p>
+</header>
 
-    <p>We specialize in grains, oils, spices, dried fruits, and organic products. Global reach • Trusted quality • Sustainable partnerships.</p>
-    
-    <footer>
-      © 2025 SIBA Trade Food. All rights reserved.<br>
-      Email: info@sibatradefood.com | Phone: +1 (234) 567-890
-    </footer>
-  </div>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="section" id="about">
+  <h2 class="title">About Us</h2>
+  <p>
+    SIBA Trade Food is an international food trading company specializing in sourcing,
+    importing, and exporting high‑quality food products between **China**, **Morocco**,
+    and global markets. We provide reliable supply chain solutions, quality control,
+    factory sourcing, and full logistics support.
+  </p>
+</div>
+
+<div class="section" id="services">
+  <h2 class="title">Our Services</h2>
+  <ul>
+    <li>Product sourcing across China</li>
+    <li>Factory verification & quality inspection</li>
+    <li>International shipping & customs clearance</li>
+    <li>Wholesale distribution & B2B supply</li>
+    <li>Export of Moroccan food products</li>
+    <li>Brand development & OEM packaging</li>
+  </ul>
+</div>
+
+<div class="section" id="contact">
+  <h2 class="title">Contact Us</h2>
+  <p><strong>📍 Location:</strong> Hangzhou, Zhejiang, China</p>
+  <p><strong>📞 Phone:</strong> +86 (Your Number)</p>
+  <p><strong>📧 Email:</strong> info@sibatradefood.com</p>
+  <p><strong>🌐 Website Under Development</strong></p>
+</div>
+
+<div class="footer">
+  © 2025 SIBA Trade Food — All Rights Reserved
+</div>
+
 </body>
 </html>
