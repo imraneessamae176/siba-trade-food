@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Siba Trade Food</title>
   <style>
-    body {margin:0; font-family:Arial, sans-serif; background:#f5f5f5; color:#222;}
+    body {margin:0; font-family:Arial,sans-serif; background:#f5f5f5; color:#222;}
     
     /* HEADER */
     header {width:100%; background:#fff; border-bottom:1px solid #ddd; position:sticky; top:0; z-index:1000;}
@@ -13,26 +13,31 @@
     header .logo {display:flex; align-items:center; gap:10px;}
     nav ul {display:flex; list-style:none; gap:25px; margin:0; padding:0;}
     nav a {text-decoration:none; color:#222; font-weight:500;}
-    .cta-btn {background:#b88a2a; color:#fff; padding:10px 22px; border-radius:8px; font-weight:bold; text-decoration:none;}
+    .cta-btn {background:#4CAF50; color:#fff; padding:10px 22px; border-radius:8px; font-weight:bold; text-decoration:none;}
 
     /* SLIDER */
-    .slider {position:relative; width:100%; height:480px; background:url('images/slider.jpg') center/cover no-repeat; display:flex; align-items:center; padding-left:120px; color:white;}
-    .slider h1 {font-size:55px; font-weight:bold; max-width:450px;}
+    .slider {position:relative; width:100%; height:480px; background:url('images/slider.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; color:white; text-align:center;}
+    .slider h1 {font-size:55px; font-weight:bold; max-width:600px; line-height:1.2; text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
 
     /* SECTIONS */
-    h2.section-title {font-size:32px; font-weight:700; margin-bottom:25px;}
+    section {padding:50px 20px; max-width:1300px; margin:auto;}
+    h2.section-title {font-size:32px; font-weight:700; margin-bottom:25px; color:#4CAF50;}
     .grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:25px;}
-    .card {background:white; border:1px solid #e5e5e5; border-radius:14px; padding:25px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.07);}
+    .card {background:white; border-radius:14px; padding:25px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.07);}
     .card img {height:100px; object-fit:contain;}
     .product-card img {height:180px;}
 
+    /* CONTACT */
+    .contact-card {background:#fff; padding:25px; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,0.07);}
+    .contact-card p {margin:8px 0; font-weight:500;}
+
     /* FOOTER */
-    footer {background:#333; padding:40px 0; color:white; text-align:center; margin-top:40px;}
+    footer {background:#4CAF50; padding:40px 0; color:white; text-align:center; margin-top:40px;}
   </style>
 </head>
 <body>
 
-<!-- ✅ HEADER -->
+<!-- HEADER -->
 <header>
   <div class="container">
     <div class="logo">
@@ -45,7 +50,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#brands">Brands</a></li>
-        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -54,22 +59,22 @@
   </div>
 </header>
 
-<!-- ✅ SLIDER -->
+<!-- SLIDER -->
 <div class="slider" id="home">
   <h1>Let’s Make Food Delicious</h1>
 </div>
 
-<!-- ✅ ABOUT -->
-<section id="about" style="padding:50px 20px; max-width:1300px; margin:auto;">
+<!-- ABOUT -->
+<section id="about">
   <h2 class="section-title">About Us</h2>
   <div class="card">
     <p>SIBA TRADE FOOD is a Moroccan food distribution company based in Salé, providing high-quality food products for retailers and wholesalers across Morocco.</p>
   </div>
 </section>
 
-<!-- ✅ BRANDS -->
-<section id="brands" style="padding:50px 20px; max-width:1300px; margin:auto;">
-  <h2 class="section-title">Brands</h2>
+<!-- BRANDS -->
+<section id="brands">
+  <h2 class="section-title">Our Brands</h2>
   <div class="grid">
     <div class="card"><img src="images/brand1.png"><h3>Brand One</h3></div>
     <div class="card"><img src="images/brand2.png"><h3>Brand Two</h3></div>
@@ -78,8 +83,8 @@
   </div>
 </section>
 
-<!-- ✅ PRODUCTS -->
-<section id="products" style="padding:50px 20px; max-width:1300px; margin:auto;">
+<!-- PRODUCTS -->
+<section id="products">
   <h2 class="section-title">Products</h2>
   <div class="grid">
     <div class="card product-card"><img src="images/prod1.png"></div>
@@ -89,7 +94,19 @@
   </div>
 </section>
 
-<!-- ✅ FOOTER -->
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact-card">
+    <p><strong>📍 Address:</strong> Rez-de-chaussée, Av. Sakia El Hamra, Angle Av. Oqba Bnou Nafii, N°9 Bis, Salé, Morocco</p>
+    <p><strong>👑 Boss:</strong> Ahmed Essamae — +212 661 171 995</p>
+    <p><strong>👤 Manager:</strong> Abdellah Essamae — +212 661 100 128</p>
+    <p><strong>🌍 External Relations:</strong> Ismail Essamae — +212 650 792 262</p>
+    <p><strong>📱 Created by:</strong> Imrane Essamae — +86 18051767948 | WeChat: IMRANE_2006</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   © 2025 Siba Trade Food — All Rights Reserved
 </footer>
