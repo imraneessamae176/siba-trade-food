@@ -3,50 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siba Trade Food</title>
+<title>SIBA TRADE FOOD - Moroccan Food Distribution</title>
 <style>
-  body {margin:0; font-family:Arial,sans-serif; background:#f5f5f5; color:#222;}
-  
+  body {margin:0; font-family:'Segoe UI',Arial,sans-serif; background:#fafafa; color:#222; line-height:1.6;}
+  a {text-decoration:none;}
+
   /* HEADER */
-  header {width:100%; background:#fff; border-bottom:1px solid #ddd; position:sticky; top:0; z-index:1000;}
-  header .container {max-width:1300px; margin:auto; padding:15px 20px; display:flex; align-items:center; justify-content:space-between;}
-  header .logo {display:flex; align-items:center; gap:10px;}
-  header .logo img {height:55px;}
-  header .logo span {font-weight:bold; font-size:20px; color:#4CAF50;}
-  nav {display:flex; align-items:center;}
-  nav ul {display:flex; list-style:none; gap:25px; margin:0; padding:0;}
-  nav a {text-decoration:none; color:#222; font-weight:500;}
-  .cta-btn {background:#4CAF50; color:#fff; padding:10px 22px; border-radius:8px; font-weight:bold; text-decoration:none;}
+  header {
+    background:#fff; 
+    box-shadow:0 2px 10px rgba(0,0,0,0.08); 
+    position:sticky; top:0; z-index:1000;
+  }
+  .container {max-width:1300px; margin:auto; padding:15px 20px; display:flex; align-items:center; justify-content:space-between;}
+  .logo {
+    display:flex; 
+    align-items:center; 
+    gap:15px;
+  }
+  .logo img {
+    height:70px;
+  }
+  .logo-text {
+    font-size:24px; 
+    font-weight:800; 
+    color:#1B5E20; 
+    letter-spacing:1px;
+  }
 
-  /* Hamburger */
-  .hamburger {display:none; flex-direction:column; cursor:pointer; gap:5px;}
-  .hamburger div {width:25px; height:3px; background:#222;}
+  nav ul {
+    display:flex; 
+    list-style:none; 
+    gap:30px; 
+    margin:0; 
+    padding:0;
+  }
+  nav a {
+    color:#333; 
+    font-weight:600; 
+    font-size:15px;
+    transition:0.3s;
+  }
+  nav a:hover {color:#4CAF50;}
 
-  /* SLIDER */
-  .slider {position:relative; width:100%; height:480px; background:url('images/slider.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:center; color:white; text-align:center;}
-  .slider h1 {font-size:55px; font-weight:bold; max-width:600px; line-height:1.2; text-shadow:2px 2px 8px rgba(0,0,0,0.5);}
+  .cta-btn {
+    background:#4CAF50; 
+    color:#fff; 
+    padding:12px 28px; 
+    border-radius:50px; 
+    font-weight:600;
+    transition:0.3s;
+  }
+  .cta-btn:hover {background:#388E3C;}
+
+  .hamburger {display:none; cursor:pointer;}
+  .hamburger div {width:28px; height:3px; background:#333; margin:5px 0; transition:0.3s;}
+
+  /* HERO */
+  .hero {
+    height:90vh; 
+    min-height:500px;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1606787366850-de6330127b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    text-align:center; 
+    color:white;
+  }
+  .hero h1 {
+    font-size:58px; 
+    font-weight:900; 
+    margin:0 0 20px 0;
+  }
+  .hero p {
+    font-size:20px; 
+    max-width:700px; 
+    margin:auto;
+  }
 
   /* SECTIONS */
-  section {padding:50px 20px; max-width:1300px; margin:auto;}
-  h2.section-title {font-size:32px; font-weight:700; margin-bottom:25px; color:#4CAF50;}
-  .grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:25px;}
-  .card {background:white; border-radius:14px; padding:25px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.07);}
-  .card img {height:100px; object-fit:contain;}
-  .product-card img {height:180px;}
+  section {padding:80px 20px; max-width:1300px; margin:auto;}
+  .section-title {
+    text-align:center; 
+    font-size:36px; 
+    color:#1B5E20; 
+    margin-bottom:60px;
+    position:relative;
+  }
+  .section-title::after {
+    content:''; 
+    width:80px; 
+    height:4px; 
+    background:#4CAF50; 
+    position:absolute; 
+    bottom:-15px; 
+    left:50%; 
+    transform:translateX(-50%);
+  }
+
+  .grid {
+    display:grid; 
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); 
+    gap:30px;
+  }
+  .card {
+    background:#fff; 
+    padding:30px; 
+    border-radius:16px; 
+    text-align:center; 
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+  }
+  .card:hover {transform:translateY(-10px);}
+  .card img {
+    height:110px; 
+    object-fit:contain; 
+    margin-bottom:20px;
+  }
+  .product-card img {
+    height:220px; 
+    border-radius:12px;
+  }
 
   /* CONTACT */
-  .contact-card {background:#fff; padding:25px; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,0.07);}
-  .contact-card p {margin:8px 0; font-weight:500;}
+  .contact-info {
+    background:#fff; 
+    padding:40px; 
+    border-radius:16px; 
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    max-width:700px; 
+    margin:auto;
+  }
+  .contact-info p {
+    font-size:17px; 
+    margin:15px 0;
+  }
+  .contact-info strong {color:#1B5E20;}
 
   /* FOOTER */
-  footer {background:#4CAF50; padding:40px 0; color:white; text-align:center; margin-top:40px;}
+  footer {
+    background:#1B5E20; 
+    color:white; 
+    text-align:center; 
+    padding:40px 20px; 
+    font-size:15px;
+  }
 
   /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav ul {display:none; flex-direction:column; background:#fff; position:absolute; top:70px; right:20px; width:200px; border:1px solid #ddd; border-radius:8px;}
+  @media (max-width: 992px) {
+    .hero h1 {font-size:44px;}
+    nav ul {display:none; flex-direction:column; background:#fff; position:absolute; top:100%; right:0; width:240px; box-shadow:0 5px 15px rgba(0,0,0,0.1); border-radius:10px; padding:20px;}
     nav ul.show {display:flex;}
-    .hamburger {display:flex;}
-    .cta-btn {display:none;}
+    .hamburger {display:block;}
+    .cta-btn {padding:10px 20px; font-size:14px;}
   }
 </style>
 </head>
@@ -54,17 +162,16 @@
 
 <!-- HEADER -->
 <header>
-  <img src="images/logo.png" alt="SIBA Logo" style="height:55px;">
-
-      <span>SIBA TRADE FOOD</span>
+  <div class="container">
+    <div class="logo">
+      <!-- Your logo here (uploaded image converted to base64 for direct use) -->
+      <img src="https://i.ibb.co/6nXvP1vP/siba-logo.png" alt="SIBA TRADE FOOD Logo">
+      <span class="logo-text">SIBA TRADE FOOD</span>
     </div>
 
-    <!-- NAVIGATION -->
     <nav>
       <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div></div><div></div><div></div>
       </div>
       <ul id="nav-menu">
         <li><a href="#home">Home</a></li>
@@ -75,61 +182,66 @@
       </ul>
     </nav>
 
-    <!-- CTA BUTTON -->
-    <a class="cta-btn" href="#brands">Our Products</a>
+    <a class="cta-btn" href="#products">Our Products</a>
   </div>
 </header>
 
-<!-- SLIDER -->
-<div class="slider" id="home">
-  <h1>Let’s Make Food Delicious</h1>
+<!-- HERO -->
+<div class="hero" id="home">
+  <div>
+    <h1>Let’s Make Food Delicious</h1>
+    <p>Premium food distribution across Morocco – Quality products, trusted brands, delivered with excellence.</p>
+  </div>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">About Us</h2>
-  <div class="card">
-    <p>SIBA TRADE FOOD is a Moroccan food distribution company based in Salé, providing high-quality food products for retailers and wholesalers across Morocco.</p>
+  <div style="text-align:center; max-width:900px; margin:auto;">
+    <div class="card">
+      <p style="font-size:18px;">SIBA TRADE FOOD is a leading Moroccan food distribution company based in Salé, specializing in supplying high-quality food products to retailers, supermarkets, and wholesalers throughout Morocco.</p>
+    </div>
   </div>
 </section>
 
 <!-- BRANDS -->
-<section id="brands">
-  <h2 class="section-title">Our Brands</h2>
+<section id="brands" style="background:#f8fff8;">
+  <h2 class="section-title">Our Exclusive Brands</h2>
   <div class="grid">
-    <div class="card"><img src="images/brand1.png" alt="Brand One"><h3>Brand One</h3></div>
-    <div class="card"><img src="images/brand2.png" alt="Brand Two"><h3>Brand Two</h3></div>
-    <div class="card"><img src="images/brand3.png" alt="Brand Three"><h3>Brand Three</h3></div>
-    <div class="card"><img src="images/brand4.png" alt="Brand Four"><h3>Brand Four</h3></div>
+    <div class="card"><img src="https://i.ibb.co/brands/cutey.png" alt="Cutey"><h3>Cutey</h3></div>
+    <div class="card"><img src="https://i.ibb.co/brands/freshly.png" alt="Freshly"><h3>Freshly</h3></div>
+    <div class="card"><img src="https://i.ibb.co/brands/makati.png" alt="Makati"><h3>Makati</h3></div>
+    <div class="card"><img src="https://i.ibb.co/brands/orinex.png" alt="Orinex"><h3>Orinex</h3></div>
+    <div class="card"><img src="https://i.ibb.co/brands/orient-gardens.png" alt="Orient Gardens"><h3>Orient Gardens</h3></div>
   </div>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products">
-  <h2 class="section-title">Products</h2>
+  <h2 class="section-title">Featured Products</h2>
   <div class="grid">
-    <div class="card product-card"><img src="images/prod1.png" alt="Product 1"></div>
-    <div class="card product-card"><img src="images/prod2.png" alt="Product 2"></div>
-    <div class="card product-card"><img src="images/prod3.png" alt="Product 3"></div>
-    <div class="card product-card"><img src="images/prod4.png" alt="Product 4"></div>
+    <div class="card product-card"><img src="https://i.ibb.co/products/orinex-cotton.jpg" alt="Orinex Cotton"></div>
+    <div class="card product-card"><img src="https://i.ibb.co/products/trash-bags.jpg" alt="Trash Bags"></div>
+    <div class="card product-card"><img src="https://i.ibb.co/products/freshly-mushroom.jpg" alt="Freshly Mushrooms"></div>
+    <div class="card product-card"><img src="https://i.ibb.co/products/orinex-charcoal.jpg" alt="Orinex Charcoal"></div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <div class="contact-card">
+<section id="contact" style="background:#f8fff8;">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="contact-info">
     <p><strong>📍 Address:</strong> Rez-de-chaussée, Av. Sakia El Hamra, Angle Av. Oqba Bnou Nafii, N°9 Bis, Salé, Morocco</p>
-    <p><strong> Gerant:</strong> Ahmed Essamae — +212 661 171 995</p>
-    <p><strong> Responsable Comerciale-manager:</strong> Abdellah Essamae — +212 661 100 128</p>
-    <p><strong> Manager:</strong> Ismail Essamae — +212 650 792 262</p>
-    
+    <p><strong>👤 Gérant:</strong> Ahmed Essamae — <a href="tel:+212661171995">+212 6 61 17 19 95</a></p>
+    <p><strong>👤 Responsable Commercial:</strong> Abdellah Essamae — <a href="tel:+212661100128">+212 6 61 10 01 28</a></p>
+    <p><strong>👤 Manager:</strong> Ismail Essamae — <a href="tel:+212650792262">+212 6 50 79 22 62</a></p>
+    <p><strong>✉️ Email:</strong> contact@sibatradefood.ma</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2015 Siba Trade Food — All Rights Reserved
+  © 2015–2025 SIBA TRADE FOOD — All Rights Reserved
 </footer>
 
 <script>
@@ -137,6 +249,5 @@ function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('show');
 }
 </script>
-
 </body>
 </html>
