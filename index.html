@@ -1,82 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SIBA TRADE FOOD</title>
-  <style>
-    body {margin:0;font-family:Arial, sans-serif;background:#f5f5f5;color:#222;}
-    header {background:#333;color:#fff;padding:40px 20px;text-align:center;}
-    .btn {display:inline-block;background:#ffcc00;color:#000;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px;}
-    section {padding:40px 20px;max-width:1000px;margin:auto;}
-    h2 {margin-bottom:15px;}
-    .card {background:#fff;padding:25px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);} 
-    .contact p {margin:6px 0;}
-  </style>
-</head>
-<body>
-  <nav style="background:#222;padding:15px;text-align:center;">
-    <a href="#home" style="color:white;margin:0 15px;text-decoration:none;font-weight:bold;">Home</a>
-    <a href="#about" style="color:white;margin:0 15px;text-decoration:none;font-weight:bold;">About Us</a>
-    <a href="#catalogue" style="color:white;margin:0 15px;text-decoration:none;font-weight:bold;">Catalogue</a>
-    <a href="#contact" style="color:white;margin:0 15px;text-decoration:none;font-weight:bold;">Contact</a>
-  </nav>
-
-  <header id="home" style="background:#111;color:#fff;padding:60px 20px;text-align:center;">
-    <img src="logo.png" alt="SIBA TRADE FOOD Logo" style="width:120px;margin-bottom:20px;">
-    <h1>Welcome to SIBA TRADE FOOD</h1>
-    <p>Premium Moroccan Supplier of Food Products — Wholesale & Retail</p>
-    <a class="btn" href="#brands">Our Products</a>
-  </header>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="card">
-      <p>
-        SIBA TRADE FOOD is a Moroccan food distribution company based in Salé. We provide a wide variety of high‑quality food products for retailers, supermarkets, and wholesalers across Morocco.
-      </p>
-      <p>
-        We supply essential groceries, canned foods, rice, pasta, cleaning products, beverages, pet food, and all goods commonly required by Moroccan merchants.
-      </p>
+<header style="width: 100%; background: white; border-bottom: 1px solid #eee;">
+  <div style="
+      max-width: 1300px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  ">
+    
+    <!-- LOGO -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="images/logo.png" alt="Siba Trade Food" style="height: 55px;">
     </div>
-  </section>
 
-  <section id="brands">
-    <h2>Our Brands & Products</h2>
-    <div class="card">
-      <p>Discover our professional product selection available for Moroccan retailers and wholesalers.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center;margin-top:20px;">
-        <div style="background:#fff;padding:15px;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">
-          <img src="brand1.jpg" alt="Brand 1" style="width:100%;border-radius:8px;">
-          <p style="margin-top:10px;font-weight:bold;">Tuna Products</p>
-        </div>
-        <div style="background:#fff;padding:15px;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">
-          <img src="brand2.jpg" alt="Brand 2" style="width:100%;border-radius:8px;">
-          <p style="margin-top:10px;font-weight:bold;">Rice & Pasta</p>
-        </div>
-        <div style="background:#fff;padding:15px;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">
-          <img src="brand3.jpg" alt="Brand 3" style="width:100%;border-radius:8px;">
-          <p style="margin-top:10px;font-weight:bold;">Pet Food</p>
-        </div>
-        <div style="background:#fff;padding:15px;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">
-          <img src="brand4.jpg" alt="Brand 4" style="width:100%;border-radius:8px;">
-          <p style="margin-top:10px;font-weight:bold;">Cleaning Products</p>
-        </div>
-      </div>
-      <p style="margin-top:20px;text-align:center;">Full catalogue coming soon.</p>
+    <!-- BRAND PORTFOLIO BUTTON -->
+    <a href="#brands" style="
+        background: #b88a2a;
+        padding: 10px 22px;
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 25px;
+    ">
+      Brand Portfolio
+    </a>
+
+    <!-- MENU -->
+    <nav>
+      <ul style="
+          display: flex;
+          list-style: none;
+          gap: 25px;
+          margin: 0;
+          padding: 0;
+          font-weight: 500;
+      ">
+        <li><a href="#home" style="text-decoration: none; color: #222;">Home</a></li>
+        <li><a href="#about" style="text-decoration: none; color: #222;">About</a></li>
+        <li><a href="#brands" style="text-decoration: none; color: #222;">Brands</a></li>
+        <li><a href="#catalogs" style="text-decoration: none; color: #222;">Catalogs</a></li>
+        <li><a href="#news" style="text-decoration: none; color: #222;">News</a></li>
+        <li><a href="#services" style="text-decoration: none; color: #222;">Services</a></li>
+        <li><a href="#contact" style="text-decoration: none; color: #222;">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- SEARCH BAR -->
+    <div>
+      <input type="text" placeholder="Search for products" style="
+          padding: 8px 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          width: 230px;
+      ">
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact">
-      <p><strong>📍 Address:</strong> Rez-de-chaussée, Av. Sakia El Hamra, Angle Av. Oqba Bnou Nafii, N°9 Bis, Salé, Morocco.</p>
-      <p><strong>👑 Boss:</strong> Ahmed Essamae — +212 661 171 995</p>
-      <p><strong>👤 Manager:</strong> Abdellah Essamae — +212 661 100 128</p>
-      <p><strong>🌍 External Relations:</strong> Ismail Essamae — +212 650 792 262</p>
-      <p><strong>📱 Created by:</strong> Imrane Essamae — +86 18051767948 | WeChat: IMRANE_2006</p>
-    </div>
-  </section>
-
-</body>
-</html>
+  </div>
+</header>
