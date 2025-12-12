@@ -1,35 +1,193 @@
-<section id="brands" style="padding: 50px 0; background: #fff;">
-  <div style="max-width: 1300px; margin: auto; padding: 0 20px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siba Trade Food</title>
 
-    <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 25px;">Brands</h2>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    ">
+        /* HEADER */
+        header {
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+        header .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+        }
 
-      <!-- BRAND CARD -->
-      <div style="
-        background: white;
-        border: 1px solid #e5e5e5;
-        border-radius: 14px;
-        padding: 25px;
-        text-align: center;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-      ">
-        <img src=\"images/brand1.png\" style=\"height: 90px; margin-bottom: 15px;\">
-        <h3 style=\"margin: 0; font-size: 18px;\">Brand Name</h3>
-      </div>
+        /* SLIDER */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            background: url('images/slider.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 120px;
+            color: white;
+        }
+        .slider h1 {
+            font-size: 55px;
+            font-weight: bold;
+            max-width: 450px;
+        }
 
-      <div style=\"background: white; border: 1px solid #e5e5e5; border-radius: 14px; padding: 25px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.07);\">
-        <img src=\"images/brand2.png\" style=\"height: 90px; margin-bottom: 15px;\">
-        <h3 style=\"margin: 0; font-size: 18px;\">Brand Name</h3>
-      </div>
+        /* TITLES */
+        h2.section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
 
-      <div style=\"background: white; border: 1px solid #e5e5e5; border-radius: 14px; padding: 25px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.07);\">
-        <img src=\"images/brand3.png\" style=\"height: 90px; margin-bottom: 15px;\">
-        <h3 style=\"margin: 0; font-size: 18px;\">Brand Name</h3>
-      </div>
+        /* GRID CARDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+        }
+        .card img {
+            height: 100px;
+            object-fit: contain;
+        }
 
-      <div style=\"background: white;
+        /* PRODUCTS */
+        .product-card img {
+            height: 180px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ HEADER -->
+<header>
+    <div class="container">
+
+        <img src="images/logo.png" alt="Siba Trade Food" style="height: 55px;">
+
+        <a href="#brands" style="
+            background: #b88a2a;
+            padding: 10px 22px;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+        ">Brand Portfolio</a>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#catalogs">Catalogs</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <input type="text" placeholder="Search for products" style="
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 230px;
+        ">
+
+    </div>
+</header>
+
+<!-- ✅ SLIDER -->
+<div class="slider">
+    <h1>Let’s Make Food Delicious</h1>
+</div>
+
+<!-- ✅ BRANDS -->
+<section id="brands" style="padding: 50px 0;">
+    <div style="max-width: 1300px; margin: auto; padding: 0 20px;">
+        
+        <h2 class="section-title">Brands</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="images/brand1.png">
+                <h3>Brand One</h3>
+            </div>
+            <div class="card">
+                <img src="images/brand2.png">
+                <h3>Brand Two</h3>
+            </div>
+            <div class="card">
+                <img src="images/brand3.png">
+                <h3>Brand Three</h3>
+            </div>
+            <div class="card">
+                <img src="images/brand4.png">
+                <h3>Brand Four</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ PRODUCTS -->
+<section id="products" style="padding: 50px 0;">
+    <div style="max-width: 1300px; margin: auto; padding: 0 20px;">
+
+        <h2 class="section-title">Products</h2>
+
+        <div class="grid">
+            <div class="card product-card"><img src="images/prod1.png"></div>
+            <div class="card product-card"><img src="images/prod2.png"></div>
+            <div class="card product-card"><img src="images/prod3.png"></div>
+            <div class="card product-card"><img src="images/prod4.png"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ FOOTER -->
+<footer>
+    © 2025 Siba Trade Food — All Rights Reserved
+</footer>
+
+</body>
+</html>
