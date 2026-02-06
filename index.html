@@ -1,882 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBA TRADE FOOD - Moroccan Wholesale Food Distribution</title>
+<title>SIBA TRADE FOOD | Wholesale Food Supplier Morocco</title>
+
 <style>
-  body {margin:0; font-family:'Segoe UI',Arial,sans-serif; background:#fafafa; color:#222; line-height:1.6;}
-  a {text-decoration:none;}
-  /* HEADER */
-  header {
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-    position:sticky; top:0; z-index:1000;
-  }
-  .container {max-width:1300px; margin:auto; padding:15px 20px; display:flex; align-items:center; justify-content:space-between;}
-  .logo {
-    display:flex;
-    align-items:center;
-    gap:15px;
-  }
-  .logo img {height:55px;}
-  .logo-text {
-    font-size:24px;
-    font-weight:800;
-    color:#1B5E20;
-    letter-spacing:1px;
-  }
-  nav ul {
-    display:flex;
-    list-style:none;
-    gap:30px;
-    margin:0;
-    padding:0;
-  }
-  nav a {
-    color:#333;
-    font-weight:600;
-    font-size:15px;
-    transition:0.3s;
-  }
-  nav a:hover {color:#4CAF50;}
-  .cta-btn {
-    background:#4CAF50;
-    color:#fff;
-    padding:12px 28px;
-    border-radius:50px;
-    font-weight:600;
-    transition:0.3s;
-  }
-  .cta-btn:hover {background:#388E3C;}
-  .hamburger {display:none; cursor:pointer;}
-  .hamburger div {width:28px; height:3px; background:#333; margin:5px 0; transition:0.3s;}
-  /* Cart Icon */
-  .cart-icon {
-    position: relative;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-  .cart-icon span {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-  /* HERO */
-  .hero {
-    height:90vh;
-    min-height:500px;
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://cdn1.modernadventure.com/app/uploads/2024/04/moad-morocco-medina-souks-46.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-  }
-  .hero h1 {
-    font-size:58px;
-    font-weight:900;
-    margin:0 0 20px 0;
-  }
-  .hero p {
-    font-size:20px;
-    max-width:700px;
-    margin:auto;
-  }
-  /* SECTIONS */
-  section {padding:80px 20px; max-width:1300px; margin:auto;}
-  .section-title {
-    text-align:center;
-    font-size:36px;
-    color:#1B5E20;
-    margin-bottom:60px;
-    position:relative;
-  }
-  .section-title::after {
-    content:'';
-    width:80px;
-    height:4px;
-    background:#4CAF50;
-    position:absolute;
-    bottom:-15px;
-    left:50%;
-    transform:translateX(-50%);
-  }
-  .grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:30px;
-  }
-  .card {
-    background:#fff;
-    padding:30px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
-  }
-  .card:hover {transform:translateY(-10px);}
-  .card img {
-    height:110px;
-    object-fit:contain;
-    margin-bottom:20px;
-  }
-  .product-card img {
-    height:220px;
-    border-radius:12px;
-  }
-  .product-card button {
-    background:#4CAF50;
-    color:#fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  .product-card button:hover {
-    background:#388E3C;
-  }
-  /* Cart Modal */
-  .cart-modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
-  .cart-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-  }
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  #cart-items {
-    list-style: none;
-    padding: 0;
-  }
-  #cart-items li {
-    margin-bottom: 10px;
-  }
-  /* Gallery Images */
-  .gallery-card img {
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  /* CONTACT */
-  .contact-info {
-    background:#fff;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    max-width:700px;
-    margin:auto;
-  }
-  .contact-info p {
-    font-size:17px;
-    margin:15px 0;
-  }
-  .contact-info strong {color:#1B5E20;}
-  /* FOOTER */
-  footer {
-    background:#1B5E20;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-    font-size:15px;
-  }
-  /* RESPONSIVE */
-  @media (max-width: 992px) {
-    .hero h1 {font-size:44px;}
-    nav ul {display:none; flex-direction:column; background:#fff; position:absolute; top:100%; right:0; width:240px; box-shadow:0 5px 15px rgba(0,0,0,0.1); border-radius:10px; padding:20px;}
-    nav ul.show {display:flex;}
-    .hamburger {display:block;}
-    .cta-btn {padding:10px 20px; font-size:14px;}
-  }
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:#fafafa;
+  color:#222;
+}
+
+a{text-decoration:none}
+
+/* HEADER */
+header{
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.container{
+  max-width:1300px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo img{height:55px}
+.logo span{
+  font-size:24px;
+  font-weight:800;
+  color:#1B5E20;
+}
+
+/* NAV */
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+  margin:0;
+  padding:0;
+}
+nav a{
+  color:#333;
+  font-weight:600;
+}
+nav a:hover{color:#4CAF50}
+
+/* HERO */
+.hero{
+  height:85vh;
+  background:
+  linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url("https://cdn1.modernadventure.com/app/uploads/2024/04/moad-morocco-medina-souks-46.jpg")
+  center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:56px;
+  font-weight:900;
+}
+.hero p{
+  font-size:20px;
+  max-width:700px;
+  margin:auto;
+}
+
+/* SECTION */
+section{
+  max-width:1300px;
+  margin:auto;
+  padding:80px 20px;
+}
+.section-title{
+  text-align:center;
+  font-size:36px;
+  color:#1B5E20;
+  margin-bottom:50px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.product{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  text-align:center;
+}
+.product img{
+  height:220px;
+  object-fit:contain;
+  margin-bottom:15px;
+}
+.product h3{
+  margin:10px 0;
+}
+.product p{
+  font-size:15px;
+  color:#555;
+}
+.product a{
+  display:inline-block;
+  margin-top:15px;
+  background:#4CAF50;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:50px;
+  font-weight:600;
+}
+.product a:hover{background:#388E3C}
+
+/* CONTACT */
+.contact-box{
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+}
+.contact-box p{
+  font-size:17px;
+  margin:12px 0;
+}
+
+/* FOOTER */
+footer{
+  background:#1B5E20;
+  color:#fff;
+  text-align:center;
+  padding:30px 20px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  z-index:9999;
+}
+.whatsapp-float:hover{
+  background:#1ebe5d;
+}
 </style>
 </head>
+
 <body>
-<!-- HEADER -->
+
 <header>
   <div class="container">
     <div class="logo">
-      <img src="https://transmed.com/wp-content/uploads/2023/03/morocco.jpg" alt="SIBA Logo" style="height:55px;">
-      <span class="logo-text">SIBA TRADE FOOD</span>
+      <img src="https://transmed.com/wp-content/uploads/2023/03/morocco.jpg">
+      <span>SIBA TRADE FOOD</span>
     </div>
     <nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
-      </div>
-      <ul id="nav-menu">
+      <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#brands">Brands</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="cta-btn" href="#products">Our Products</a>
-    <div class="cart-icon" onclick="openCart()">
-      🛒 <span id="cart-count">0</span>
-    </div>
   </div>
 </header>
-<!-- HERO -->
+
 <div class="hero" id="home">
   <div>
-    <h1>WELCOME TO SIBA TRADE FOOD</h1>
-    <p>Premium wholesale food distribution across Morocco – Quality products, trusted brands, delivered with excellence at wholesale prices.</p>
+    <h1>Wholesale Food Distribution</h1>
+    <p>Trusted Moroccan supplier for retailers, supermarkets & wholesalers.</p>
   </div>
 </div>
-<!-- ABOUT -->
-<section id="about">
-  <h2 class="section-title">About Us</h2>
-  <div style="text-align:center; max-width:900px; margin:auto;">
-    <div class="card">
-      <p style="font-size:18px;">SIBA TRADE FOOD is a leading Moroccan wholesale food distribution company based in Salé, specializing in supplying high-quality food products in bulk to retailers, supermarkets, and wholesalers throughout Morocco.</p>
-    </div>
-  </div>
-</section>
-<!-- BRANDS -->
-<section id="brands" style="background:#f8fff8;">
-  <h2 class="section-title">Our Exclusive Brands</h2>
-  <div class="grid">
-    <!-- Brand 1: 9otof الغالية بالعربية -->
-    <div class="card"><img src="https://www.acquistapace.com/wp-content/uploads/2023/05/Mina-Products-1024x606.webp" alt="قطوف الغالية"><h3>قطوف الغالية</h3></div>
-    <!-- Brand 2: Cat, Dog, Bird Food -->
-    <div class="card"><img src="https://images.unsplash.com/photo-1576618148400-108302661fd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Pet Food"><h3>Cat, Dog & Bird Food</h3></div>
-    <!-- Brand 3: Tuna -->
-    <div class="card"><img src="https://www.seriouseats.com/thmb/WY56FfGQPsc6exm3TSgZ1jrKbpQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/202400827-TunaInWaterTasteTest-Amanda-Suarez-5-234c878c2bd747678e67b5ccef51dfcf.jpg" alt="Tuna"><h3>أنواع مختلفة من التونة</h3></div>
-    <!-- Brand 4: Pasta -->
-    <div class="card"><img src="https://dims.apnews.com/dims4/default/ec61206/2147483647/strip/true/crop/8640x4860+0+450/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F38%2Fae%2Fc27127a4f8ddd7cfbb445defc591%2Fb5827bd547df40458576865013abe05f" alt="Tria Pasta"><h3>Tria Pasta</h3></div>
-    <!-- Brand 5: 9atani, Rice, Lentils, Beans, Chickpeas, Fava Beans -->
-    <div class="card"><img src="https://wholegrainscouncil.org/sites/default/files/thumbnails/image/Assorted-grains-nuts-beans-iStock_000019335226.jpg" alt="9atani & others"><h3>قطاني: رز، عدس، لوبيا، حمص، جلبانة، فول</h3></div>
-    <!-- Brand 6: Dates -->
-    <div class="card"><img src="https://c8.alamy.com/comp/DRKAJX/tunisian-dates-on-bamboo-tray-DRKAJX.jpg" alt="Dates"><h3>تمر: تونسية، جزائرية، سكري</h3></div>
-  </div>
-</section>
-<!-- GALLERY -->
-<section id="gallery" style="background:#f8fff8;">
-  <h2 class="section-title">Moroccan Souks</h2>
-  <div class="grid">
-    <div class="card gallery-card"><img src="https://thumbs.dreamstime.com/b/vibrant-piles-spices-fill-decorative-baskets-busy-marrakech-market-just-sunset-vendors-shoppers-mingle-amidst-401411874.jpg" alt="Marrakech Spice Market"></div>
-    <div class="card gallery-card"><img src="https://assets3.thrillist.com/v1/image/2819216/792x526/scale;webp=auto;jpeg_quality=60;progressive.jpg" alt="Marrakech Souk Alley"></div>
-    <div class="card gallery-card"><img src="https://www.shutterstock.com/shutterstock/photos/2683313327/display_1500/stock-photo-marrakech-market-in-morocco-traditional-souk-with-colorful-stalls-spices-handicrafts-and-2683313327.jpg" alt="Marrakech Market Stalls"></div>
-    <div class="card gallery-card"><img src="https://res.cloudinary.com/take-memories/images/f_auto,dpr_auto,q_auto,w_2000,c_fill,h_1200/om/nsghdtlahbsp67ii1kmz/mars-morocco-bazaar" alt="Morocco Bazaar"></div>
-    <div class="card gallery-card"><img src="https://c8.alamy.com/comp/3BA3AMA/09-march-2025-marrakech-morocco-tourist-browses-vibrant-handcrafted-goods-in-a-traditional-moroccan-souk-3BA3AMA.jpg" alt="Marrakech Souk Merchant"></div>
-    <div class="card gallery-card"><img src="https://i0.wp.com/popoversandpassports.com/wp-content/uploads/2024/04/img_5689_jpg-1.jpg?fit=1024%2C768&ssl=1" alt="Marrakech Souk Spices"></div>
-  </div>
-</section>
-<!-- PRODUCTS -->
+
 <section id="products">
-  <h2 class="section-title">Featured Wholesale Products</h2>
-  <div class="grid">
-    <div class="card product-card" data-product="Orinex Cotton" data-price="50">
-      <img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg" alt="Orinex Cotton">
-      <h3>Orinex Cotton (Wholesale)</h3>
-      <p>Price: 50 MAD per unit (bulk discounts available)</p>
-      <button onclick="addToCart('Orinex Cotton', 50)">Add to Cart</button>
+  <h2 class="section-title">Our Products</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg">
+      <h3>Orinex Cotton</h3>
+      <p>High quality cotton – Wholesale supply</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Orinex%20Cotton%20wholesale">Request Quote</a>
     </div>
-    <div class="card product-card" data-product="Trash Bags" data-price="30">
-      <img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg" alt="Trash Bags">
-      <h3>Trash Bags (Wholesale)</h3>
-      <p>Price: 30 MAD per unit (bulk discounts available)</p>
-      <button onclick="addToCart('Trash Bags', 30)">Add to Cart</button>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg">
+      <h3>Trash Bags</h3>
+      <p>Strong & durable – Bulk orders</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Trash%20Bags%20wholesale">Request Quote</a>
     </div>
-    <div class="card product-card" data-product="Freshly Mushrooms" data-price="40">
-      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png" alt="Freshly Mushrooms">
-      <h3>Freshly Mushrooms (Wholesale)</h3>
-      <p>Price: 40 MAD per unit (bulk discounts available)</p>
-      <button onclick="addToCart('Freshly Mushrooms', 40)">Add to Cart</button>
+
+    <div class="product">
+      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png">
+      <h3>Fresh Mushrooms</h3>
+      <p>Wholesale food supply</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Fresh%20Mushrooms%20wholesale">Request Quote</a>
     </div>
-    <div class="card product-card" data-product="Orinex Charcoal" data-price="60">
-      <img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434-PFDrp2NK8HALfC74eGyQc3o32lzzSBIQwUYjqrVv.jpg" alt="Orinex Charcoal">
-      <h3>Orinex Charcoal (Wholesale)</h3>
-      <p>Price: 60 MAD per unit (bulk discounts available)</p>
-      <button onclick="addToCart('Orinex Charcoal', 60)">Add to Cart</button>
+
+    <div class="product">
+      <img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434.jpg">
+      <h3>Orinex Charcoal</h3>
+      <p>Premium charcoal – Wholesale</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Orinex%20Charcoal%20wholesale">Request Quote</a>
     </div>
+
   </div>
 </section>
-<!-- CONTACT -->
-<section id="contact" style="background:#f8fff8;">
+
+<section id="contact">
   <h2 class="section-title">Contact Us</h2>
-  <div class="contact-info">
-    <p><strong>📍 Address:</strong> Rez-de-chaussée, Av. Sakia El Hamra, Angle Av. Oqba Bnou Nafii, N°9 Bis, Salé, Morocco</p>
-    <p><strong>👤 Gérant:</strong> Ahmed Essamae — <a href="tel:+212661171995">+212 6 61 17 19 95</a></p>
-    <p><strong>👤 Responsable Commercial:</strong> Abdellah Essamae — <a href="tel:+212661100128">+212 6 61 10 01 28</a></p>
-    <p><strong>👤 Manager:</strong> Ismail Essamae — <a href="tel:+212650792262">+212 6 50 79 22 62</a></p>
-    <p><strong>✉️ Email:</strong> contact@sibatradefood.ma</p>
+  <div class="contact-box">
+    <p><strong>📍 Address:</strong> Salé, Morocco</p>
+    <p><strong>📞 Manager:</strong> Ismail Essamae</p>
+    <p><strong>WhatsApp:</strong> +212 6 50 79 22 62</p>
+    <p><strong>Email:</strong> contact@sibatradefood.ma</p>
   </div>
 </section>
-<!-- FOOTER -->
+
 <footer>
-  © 2012–2025 SIBA TRADE FOOD — All Rights Reserved
-</footer>
-<!-- Cart Modal -->
-<div id="cartModal" class="cart-modal">
-  <div class="cart-content">
-    <span class="close" onclick="closeCart()">&times;</span>
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p>Total: <span id="cart-total">0</span> MAD</p>
-    <button onclick="checkout()">Checkout</button>
-  </div>
-</div>
-<script>
-function toggleMenu() {
-  document.getElementById('nav-menu').classList.toggle('show');
-}
-
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function updateCartCount() {
-  document.getElementById('cart-count').innerText = cart.length;
-}
-
-function addToCart(product, price) {
-  cart.push({product, price});
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartCount();
-  alert(`${product} added to cart!`);
-}
-
-function openCart() {
-  document.getElementById('cartModal').style.display = "block";
-  displayCartItems();
-}
-
-function closeCart() {
-  document.getElementById('cartModal').style.display = "none";
-}
-
-function displayCartItems() {
-  const cartItems = document.getElementById('cart-items');
-  cartItems.innerHTML = '';
-  let total = 0;
-  cart.forEach(item => {
-    const li = document.createElement('li');
-    li.innerText = `${item.product} - ${item.price} MAD`;
-    cartItems.appendChild(li);
-    total += item.price;
-  });
-  document.getElementById('cart-total').innerText = total;
-}
-
-function checkout() {
-  alert('Proceeding to checkout... (This is a simulation)');
-  cart = [];
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartCount();
-  closeCart();
-}
-  <!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBA TRADE FOOD - توزيع المواد الغذائية بالجملة في المغرب</title>
-<style>
-  body {margin:0; font-family:'Segoe UI',Arial,sans-serif; background:#fafafa; color:#222; line-height:1.6; direction: rtl;}
-  a {text-decoration:none;}
-  /* HEADER */
-  header {
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-    position:sticky; top:0; z-index:1000;
-  }
-  .container {max-width:1300px; margin:auto; padding:15px 20px; display:flex; align-items:center; justify-content:space-between;}
-  .logo {
-    display:flex;
-    align-items:center;
-    gap:15px;
-  }
-  .logo img {height:55px;}
-  .logo-text {
-    font-size:24px;
-    font-weight:800;
-    color:#1B5E20;
-    letter-spacing:1px;
-  }
-  nav ul {
-    display:flex;
-    list-style:none;
-    gap:30px;
-    margin:0;
-    padding:0;
-  }
-  nav a {
-    color:#333;
-    font-weight:600;
-    font-size:15px;
-    transition:0.3s;
-  }
-  nav a:hover {color:#4CAF50;}
-  .cta-btn {
-    background:#4CAF50;
-    color:#fff;
-    padding:12px 28px;
-    border-radius:50px;
-    font-weight:600;
-    transition:0.3s;
-  }
-  .cta-btn:hover {background:#388E3C;}
-  .hamburger {display:none; cursor:pointer;}
-  .hamburger div {width:28px; height:3px; background:#333; margin:5px 0; transition:0.3s;}
-  /* Cart Icon */
-  .cart-icon {
-    position: relative;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-  .cart-icon span {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-  /* HERO */
-  .hero {
-    height:90vh;
-    min-height:500px;
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://cdn1.modernadventure.com/app/uploads/2024/04/moad-morocco-medina-souks-46.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-  }
-  .hero h1 {
-    font-size:58px;
-    font-weight:900;
-    margin:0 0 20px 0;
-  }
-  .hero p {
-    font-size:20px;
-    max-width:700px;
-    margin:auto;
-  }
-  /* SECTIONS */
-  section {padding:80px 20px; max-width:1300px; margin:auto;}
-  .section-title {
-    text-align:center;
-    font-size:36px;
-    color:#1B5E20;
-    margin-bottom:60px;
-    position:relative;
-  }
-  .section-title::after {
-    content:'';
-    width:80px;
-    height:4px;
-    background:#4CAF50;
-    position:absolute;
-    bottom:-15px;
-    left:50%;
-    transform:translateX(-50%);
-  }
-  .grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:30px;
-  }
-  .card {
-    background:#fff;
-    padding:30px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
-  }
-  .card:hover {transform:translateY(-10px);}
-  .card img {
-    height:110px;
-    object-fit:contain;
-    margin-bottom:20px;
-  }
-  .product-card img {
-    height:220px;
-    border-radius:12px;
-  }
-  .product-card button {
-    background:#4CAF50;
-    color:#fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  .product-card button:hover {
-    background:#388E3C;
-  }
-  /* Cart Modal */
-  .cart-modal, .register-modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
-  .cart-content, .register-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-  }
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  #cart-items {
-    list-style: none;
-    padding: 0;
-  }
-  #cart-items li {
-    margin-bottom: 10px;
-  }
-  /* Register Form */
-  .register-content label {
-    display: block;
-    margin: 15px 0 5px;
-    font-weight: bold;
-    color: #1B5E20;
-  }
-  .register-content input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  .register-content button {
-    background:#4CAF50;
-    color:#fff;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    font-size: 18px;
-  }
-  .register-content button:hover {
-    background:#388E3C;
-  }
-  /* CONTACT */
-  .contact-info {
-    background:#fff;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    max-width:700px;
-    margin:auto;
-  }
-  .contact-info p {
-    font-size:17px;
-    margin:15px 0;
-  }
-  .contact-info strong {color:#1B5E20;}
-  /* FOOTER */
-  footer {
-    background:#1B5E20;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-    font-size:15px;
-  }
-  /* RESPONSIVE */
-  @media (max-width: 992px) {
-    .hero h1 {font-size:44px;}
-    nav ul {display:none; flex-direction:column; background:#fff; position:absolute; top:100%; right:0; width:240px; box-shadow:0 5px 15px rgba(0,0,0,0.1); border-radius:10px; padding:20px;}
-    nav ul.show {display:flex;}
-    .hamburger {display:block;}
-    .cta-btn {padding:10px 20px; font-size:14px;}
-  }
-</style>
-</head>
-<body>
-<!-- HEADER -->
-<header>
-  <div class="container">
-    <div class="logo">
-      <img src="https://transmed.com/wp-content/uploads/2023/03/morocco.jpg" alt="SIBA Logo" style="height:55px;">
-      <span class="logo-text">SIBA TRADE FOOD</span>
-    </div>
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
-      </div>
-      <ul id="nav-menu">
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#brands">علاماتنا التجارية</a></li>
-        <li><a href="#gallery">معرض الصور</a></li>
-        <li><a href="#products">المنتجات</a></li>
-        <li><a href="#contact">اتصل بنا</a></li>
-      </ul>
-    </nav>
-    <a class="cta-btn" href="#products">منتجاتنا</a>
-    <div class="cart-icon" onclick="openCart()">
-      🛒 <span id="cart-count">0</span>
-    </div>
-  </div>
-</header>
-<!-- HERO -->
-<div class="hero" id="home">
-  <div>
-    <h1>مرحبا بكم في سيبا تريد فود</h1>
-    <p>توزيع المواد الغذائية بالجملة عبر المغرب – منتجات عالية الجودة، علامات موثوقة، بأسعار الجملة.</p>
-  </div>
-</div>
-<!-- ABOUT -->
-<section id="about">
-  <h2 class="section-title">من نحن</h2>
-  <div style="text-align:center; max-width:900px; margin:auto;">
-    <div class="card">
-      <p style="font-size:18px;">سيبا تريد فود شركة رائدة في توزيع المواد الغذائية بالجملة بالمغرب، مقرها في سلا، متخصصة في توريد المنتجات الغذائية عالية الجودة للتجار والسوبرماركت والجملة عبر كل المملكة.</p>
-    </div>
-  </div>
-</section>
-<!-- BRANDS -->
-<section id="brands" style="background:#f8fff8;">
-  <h2 class="section-title">علاماتنا التجارية الحصرية</h2>
-  <div class="grid">
-    <div class="card"><img src="https://www.acquistapace.com/wp-content/uploads/2023/05/Mina-Products-1024x606.webp" alt="قطوف الغالية"><h3>قطوف الغالية</h3></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1576618148400-108302661fd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Pet Food"><h3>أغذية القطط والكلاب والطيور</h3></div>
-    <div class="card"><img src="https://www.seriouseats.com/thmb/WY56FfGQPsc6exm3TSgZ1jrKbpQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/202400827-TunaInWaterTasteTest-Amanda-Suarez-5-234c878c2bd747678e67b5ccef51dfcf.jpg" alt="Tuna"><h3>أنواع مختلفة من التونة</h3></div>
-    <div class="card"><img src="https://dims.apnews.com/dims4/default/ec61206/2147483647/strip/true/crop/8640x4860+0+450/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F38%2Fae%2Fc27127a4f8ddd7cfbb445defc591%2Fb5827bd547df40458576865013abe05f" alt="Tria Pasta"><h3>تريا باستا</h3></div>
-    <div class="card"><img src="https://wholegrainscouncil.org/sites/default/files/thumbnails/image/Assorted-grains-nuts-beans-iStock_000019335226.jpg" alt="9atani & others"><h3>قطاني: رز، عدس، لوبيا، حمص، فول</h3></div>
-    <div class="card"><img src="https://c8.alamy.com/comp/DRKAJX/tunisian-dates-on-bamboo-tray-DRKAJX.jpg" alt="Dates"><h3>تمر: تونسية، جزائرية، سكري</h3></div>
-  </div>
-</section>
-<!-- GALLERY -->
-<section id="gallery" style="background:#f8fff8;">
-  <h2 class="section-title">أسواق المغرب</h2>
-  <div class="grid">
-    <div class="card gallery-card"><img src="https://thumbs.dreamstime.com/b/vibrant-piles-spices-fill-decorative-baskets-busy-marrakech-market-just-sunset-vendors-shoppers-mingle-amidst-401411874.jpg" alt="سوق التوابل مراكش"></div>
-    <div class="card gallery-card"><img src="https://assets3.thrillist.com/v1/image/2819216/792x526/scale;webp=auto;jpeg_quality=60;progressive.jpg" alt="زقاق سوق مراكش"></div>
-    <div class="card gallery-card"><img src="https://www.shutterstock.com/shutterstock/photos/2683313327/display_1500/stock-photo-marrakech-market-in-morocco-traditional-souk-with-colorful-stalls-spices-handicrafts-and-2683313327.jpg" alt="أكشاك سوق مراكش"></div>
-    <div class="card gallery-card"><img src="https://res.cloudinary.com/take-memories/images/f_auto,dpr_auto,q_auto,w_2000,c_fill,h_1200/om/nsghdtlahbsp67ii1kmz/mars-morocco-bazaar" alt="بازار المغرب"></div>
-    <div class="card gallery-card"><img src="https://c8.alamy.com/comp/3BA3AMA/09-march-2025-marrakech-morocco-tourist-browses-vibrant-handcrafted-goods-in-a-traditional-moroccan-souk-3BA3AMA.jpg" alt="تاجر سوق مراكش"></div>
-    <div class="card gallery-card"><img src="https://i0.wp.com/popoversandpassports.com/wp-content/uploads/2024/04/img_5689_jpg-1.jpg?fit=1024%2C768&ssl=1" alt="توابل سوق مراكش"></div>
-  </div>
-</section>
-<!-- PRODUCTS -->
-<section id="products">
-  <h2 class="section-title">منتجاتنا بالجملة</h2>
-  <div class="grid">
-    <div class="card product-card" data-product="Orinex Cotton" data-price="50">
-      <img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg" alt="Orinex Cotton">
-      <h3>أورينيكس قطن</h3>
-      <p>السعر: 50 درهم (خصومات بالجملة)</p>
-      <button onclick="addToCart('أورينيكس قطن', 50)">أضف إلى السلة</button>
-    </div>
-    <div class="card product-card" data-product="Trash Bags" data-price="30">
-      <img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg" alt="Trash Bags">
-      <h3>أكياس القمامة</h3>
-      <p>السعر: 30 درهم (خصومات بالجملة)</p>
-      <button onclick="addToCart('أكياس القمامة', 30)">أضف إلى السلة</button>
-    </div>
-    <div class="card product-card" data-product="Freshly Mushrooms" data-price="40">
-      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png" alt="Freshly Mushrooms">
-      <h3>فطر طازج</h3>
-      <p>السعر: 40 درهم (خصومات بالجملة)</p>
-      <button onclick="addToCart('فطر طازج', 40)">أضف إلى السلة</button>
-    </div>
-    <div class="card product-card" data-product="Orinex Charcoal" data-price="60">
-      <img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434-PFDrp2NK8HALfC74eGyQc3o32lzzSBIQwUYjqrVv.jpg" alt="Orinex Charcoal">
-      <h3>فحم أورينيكس</h3>
-      <p>السعر: 60 درهم (خصومات بالجملة)</p>
-      <button onclick="addToCart('فحم أورينيكس', 60)">أضف إلى السلة</button>
-    </div>
-  </div>
-</section>
-<!-- CONTACT -->
-<section id="contact" style="background:#f8fff8;">
-  <h2 class="section-title">اتصل بنا</h2>
-  <div class="contact-info">
-    <p><strong>📍 العنوان:</strong> Rez-de-chaussée, Av. Sakia El Hamra, Angle Av. Oqba Bnou Nafii, N°9 Bis, Salé, Morocco</p>
-    <p><strong>👤 المدير:</strong> أحمد السماعي — <a href="tel:+212661171995">+212 6 61 17 19 95</a></p>
-    <p><strong>👤 المسؤول التجاري:</strong> عبد الله السماعي — <a href="tel:+212661100128">+212 6 61 10 01 28</a></p>
-    <p><strong>👤 المدير:</strong> إسماعيل السماعي — <a href="tel:+212650792262">+212 6 50 79 22 62</a></p>
-    <p><strong>✉️ البريد:</strong> contact@sibatradefood.ma</p>
-  </div>
-</section>
-<!-- FOOTER -->
-<footer>
-  © 2012–2025 SIBA TRADE FOOD — جميع الحقوق محفوظة
+© 2012–2025 SIBA TRADE FOOD — All Rights Reserved
 </footer>
 
-<!-- Cart Modal -->
-<div id="cartModal" class="cart-modal">
-  <div class="cart-content">
-    <span class="close" onclick="closeCart()">&times;</span>
-    <h2>سلتك</h2>
-    <ul id="cart-items"></ul>
-    <p>المجموع: <span id="cart-total">0</span> درهم</p>
-    <button onclick="checkout()">الدفع</button>
-  </div>
-</div>
+<!-- WhatsApp Button -->
+<a class="whatsapp-float"
+   href="https://wa.me/212650792262"
+   target="_blank">
+  💬
+</a>
 
-<!-- Register Modal -->
-<div id="registerModal" class="register-modal">
-  <div class="register-content">
-    <span class="close" onclick="closeRegister()">&times;</span>
-    <h2>إنشاء حساب جديد</h2>
-    <p>لإتمام عملية الشراء بسهولة، يرجى إنشاء حسابك الآن</p>
-    <label>الاسم الكامل</label>
-    <input type="text" id="reg-name" placeholder="أدخل اسمك الكامل">
-    
-    <label>البريد الإلكتروني (Gmail)</label>
-    <input type="email" id="reg-email" placeholder="example@gmail.com">
-    
-    <label>رقم الهاتف</label>
-    <input type="tel" id="reg-phone" placeholder="+212 6 XX XX XX XX">
-    
-    <label>العنوان (حيث تسكن)</label>
-    <input type="text" id="reg-address" placeholder="المدينة، الحي، الشارع">
-    
-    <label>موقع المتجر / المحل التجاري</label>
-    <input type="text" id="reg-store" placeholder="مدينة، عنوان المتجر">
-    
-    <button onclick="createAccount()">إنشاء الحساب ومتابعة الشراء</button>
-  </div>
-</div>
-
-<script>
-function toggleMenu() {
-  document.getElementById('nav-menu').classList.toggle('show');
-}
-
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let user = JSON.parse(localStorage.getItem('user')) || null;
-
-function updateCartCount() {
-  document.getElementById('cart-count').innerText = cart.length;
-}
-
-function addToCart(product, price) {
-  cart.push({product, price});
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartCount();
-  alert(product + ' تمت إضافته إلى السلة!');
-}
-
-function openCart() {
-  document.getElementById('cartModal').style.display = "block";
-  displayCartItems();
-}
-
-function closeCart() {
-  document.getElementById('cartModal').style.display = "none";
-}
-
-function displayCartItems() {
-  const cartItems = document.getElementById('cart-items');
-  cartItems.innerHTML = '';
-  let total = 0;
-  cart.forEach(item => {
-    const li = document.createElement('li');
-    li.innerText = `${item.product} - ${item.price} درهم`;
-    cartItems.appendChild(li);
-    total += item.price;
-  });
-  document.getElementById('cart-total').innerText = total;
-}
-
-function showRegister() {
-  document.getElementById('registerModal').style.display = "block";
-}
-
-function closeRegister() {
-  document.getElementById('registerModal').style.display = "none";
-}
-
-function createAccount() {
-  const name = document.getElementById('reg-name').value.trim();
-  const email = document.getElementById('reg-email').value.trim();
-  const phone = document.getElementById('reg-phone').value.trim();
-  const address = document.getElementById('reg-address').value.trim();
-  const store = document.getElementById('reg-store').value.trim();
-
-  if (!name || !email || !phone || !address || !store) {
-    alert('يرجى ملء جميع الحقول');
-    return;
-  }
-
-  user = { name, email, phone, address, store };
-  localStorage.setItem('user', JSON.stringify(user));
-
-  alert('تم إنشاء حسابك بنجاح! مرحبا ' + name);
-  closeRegister();
-  checkout();   // مباشرة نكمل الدفع
-}
-
-function checkout() {
-  if (!user) {
-    alert('يجب إنشاء حساب لإتمام الشراء');
-    showRegister();
-    return;
-  }
-
-  alert(`شكرا ${user.name}!\nتمت معالجة طلبك بنجاح.\nسيتم الاتصال بك على ${user.phone} لتأكيد التسليم.`);
-  cart = [];
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartCount();
-  closeCart();
-}
-
-updateCartCount();
-</script>
-</body>
-</html>
-
-updateCartCount();
-</script>
 </body>
 </html>
