@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBA TRADE FOOD | Fournisseur Alimentaire</title>
+<title>SIBA TRADE FOOD | Distribution Alimentaire</title>
 
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fafafa;color:#222}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#222}
 a{text-decoration:none}
 
 /* HEADER */
@@ -16,7 +16,7 @@ header{
   position:sticky;top:0;z-index:1000;
 }
 .container{
-  max-width:1300px;margin:auto;padding:15px 20px;
+  max-width:1300px;margin:auto;padding:15px 25px;
   display:flex;align-items:center;justify-content:space-between;
 }
 .logo{display:flex;align-items:center;gap:12px}
@@ -29,19 +29,20 @@ nav a:hover{color:#4CAF50}
 /* HERO */
 .hero{
   height:80vh;
-  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-  url("https://cdn1.modernadventure.com/app/uploads/2024/04/moad-morocco-medina-souks-46.jpg")
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("https://images.unsplash.com/photo-1606787366850-de6330128bfc")
   center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   text-align:center;color:#fff;
 }
 .hero h1{font-size:52px;font-weight:900}
-.hero p{font-size:20px;max-width:750px;margin:auto}
+.hero p{font-size:20px;max-width:800px;margin:auto}
 
 /* SECTION */
-section{max-width:1300px;margin:auto;padding:80px 20px}
+section{max-width:1300px;margin:auto;padding:80px 25px}
 .section-title{
-  text-align:center;font-size:34px;color:#1B5E20;margin-bottom:50px
+  text-align:center;font-size:36px;
+  color:#1B5E20;margin-bottom:60px
 }
 
 /* GRID */
@@ -55,23 +56,25 @@ section{max-width:1300px;margin:auto;padding:80px 20px}
   box-shadow:0 8px 25px rgba(0,0,0,.08);
   text-align:center;
 }
-.card img{height:200px;object-fit:contain;margin-bottom:15px}
+.card img{
+  height:200px;object-fit:contain;margin-bottom:15px
+}
+.card h3{margin-bottom:8px}
 
-/* PRODUCTS */
-.product h3{margin-bottom:5px}
-.product p{font-size:14px;color:#555}
-.product a{
+/* BUTTON */
+.btn{
   display:inline-block;margin-top:15px;
   background:#4CAF50;color:#fff;
-  padding:12px 25px;border-radius:50px;font-weight:600;
+  padding:12px 28px;border-radius:50px;
+  font-weight:600;
 }
-.product a:hover{background:#388E3C}
+.btn:hover{background:#388E3C}
 
 /* CONTACT */
 .contact-box{
-  background:#fff;padding:40px;border-radius:16px;
+  background:#fff;padding:45px;border-radius:18px;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
-  max-width:700px;margin:auto;text-align:center;
+  max-width:750px;margin:auto;text-align:center;
 }
 
 /* FOOTER */
@@ -110,85 +113,113 @@ footer{
 
 <div class="hero">
   <div>
-    <h1>Fournisseur Alimentaire de Confiance</h1>
+    <h1>Leader en Distribution Alimentaire</h1>
     <p>
-      مورد غذائي موثوق لتجار الجملة والتجزئة بالمغرب  
+      شريككم الموثوق في توزيع المنتجات الغذائية بالجملة داخل المغرب وخارجه  
       <br>
-      Distribution alimentaire pour grossistes et détaillants
+      Votre partenaire stratégique en distribution alimentaire au Maroc et à l’international
     </p>
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section id="products">
-  <h2 class="section-title">Nos Produits | منتجاتنا</h2>
+<h2 class="section-title">Nos Produits | منتجاتنا</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card product">
-      <img src="products/jam.png">
-      <h3>Confiture | مربى</h3>
-      <p>Production marocaine – Vente en gros</p>
-      <p>منتوج مغربي – بيع بالجملة</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/jam.png">
+<h3>Confiture | مربى</h3>
+<p>Produit marocain pour grossistes</p>
+<p>منتوج مغربي موجه لتجار الجملة</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-    <div class="card product">
-      <img src="products/corn.png">
-      <h3>Maïs | ذرة</h3>
-      <p>Qualité export – Bulk</p>
-      <p>جودة عالية للتصدير</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/honey.png">
+<h3>Miel | عسل</h3>
+<p>Qualité naturelle certifiée</p>
+<p>جودة طبيعية مضمونة</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-    <div class="card product">
-      <img src="products/mushroom.png">
-      <h3>Champignons | فطر</h3>
-      <p>Conserves & frais</p>
-      <p>معلب و طري</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/corn.png">
+<h3>Maïs | ذرة</h3>
+<p>Approvisionnement stable</p>
+<p>تزويد منتظم ومستمر</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-    <div class="card product">
-      <img src="products/tuna.png">
-      <h3>Thon | تونة</h3>
-      <p>Conserves alimentaires</p>
-      <p>تونة معلبة</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/mushroom.png">
+<h3>Champignons | فطر</h3>
+<p>Restauration & distribution</p>
+<p>موجه للمطاعم والتوزيع</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-    <div class="card product">
-      <img src="products/legumes.png">
-      <h3>Légumineuses | قطاني</h3>
-      <p>Lentilles, pois chiches, haricots</p>
-      <p>عدس، حمص، لوبيا</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/tuna.png">
+<h3>Thon | تونة</h3>
+<p>Conserves alimentaires</p>
+<p>منتجات معلبة غذائية</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-    <div class="card product">
-      <img src="products/canned.png">
-      <h3>Conserves | مواد معلبة</h3>
-      <p>Qualité professionnelle</p>
-      <p>جودة مهنية</p>
-      <a href="https://wa.me/212650792262">Demander un devis</a>
-    </div>
+<div class="card">
+<img src="products/sardine.png">
+<h3>Sardine | سردين</h3>
+<p>Marché local & export</p>
+<p>للسوق المحلي والتصدير</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
 
-  </div>
+<div class="card">
+<img src="products/legumes.png">
+<h3>Légumineuses | قطاني</h3>
+<p>Gamme complète professionnelle</p>
+<p>تشكيلة كاملة للمهنيين</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
+
+<div class="card">
+<img src="products/oil.png">
+<h3>Huile | زيت</h3>
+<p>Qualité distribution</p>
+<p>جودة مخصصة للتوزيع</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
+
+<div class="card">
+<img src="products/canned.png">
+<h3>Conserves | مواد معلبة</h3>
+<p>Distribution à grande échelle</p>
+<p>توزيع على نطاق واسع</p>
+<a class="btn" href="https://wa.me/212650792262">Contact commercial</a>
+</div>
+
+</div>
 </section>
 
 <section id="contact">
-  <h2 class="section-title">Contact | تواصل معنا</h2>
-  <div class="contact-box">
-    <p><strong>Responsable:</strong> Ismail Essamae</p>
-    <p><strong>WhatsApp:</strong> +212 6 50 79 22 62</p>
-    <p><strong>Email:</strong> contact@sibatradefood.ma</p>
-  </div>
+<h2 class="section-title">Contact | تواصل معنا</h2>
+<div class="contact-box">
+<p><strong>Responsable Commercial:</strong> Ismail Essamae</p>
+<p><strong>WhatsApp:</strong> +212 6 50 79 22 62</p>
+<p><strong>Email:</strong> contact@sibatradefood.ma</p>
+<p>
+نحن منفتحون على شراكات تجارية طويلة الأمد  
+<br>
+Ouverts aux partenariats commerciaux durables
+</p>
+</div>
 </section>
 
 <footer>
-© 2012–2025 SIBA TRADE FOOD — Tous droits réservés  
+© 2012–2025 SIBA TRADE FOOD  
 <br>
-جميع الحقوق محفوظة
+Distribution Alimentaire Professionnelle – Maroc
 </footer>
 
 <a class="whatsapp" href="https://wa.me/212650792262" target="_blank">💬</a>
