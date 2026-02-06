@@ -1,60 +1,29 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBA TRADE FOOD | Wholesale Food Supplier Morocco</title>
+<title>SIBA TRADE FOOD | Wholesale Supplier Morocco</title>
 
 <style>
-body{
-  margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:#fafafa;
-  color:#222;
-}
-
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#fafafa;color:#222}
 a{text-decoration:none}
 
 /* HEADER */
 header{
   background:#fff;
   box-shadow:0 2px 10px rgba(0,0,0,.08);
-  position:sticky;
-  top:0;
-  z-index:1000;
+  position:sticky;top:0;z-index:1000;
 }
 .container{
-  max-width:1300px;
-  margin:auto;
-  padding:15px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  max-width:1300px;margin:auto;padding:15px 20px;
+  display:flex;align-items:center;justify-content:space-between;
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.logo{display:flex;align-items:center;gap:12px}
 .logo img{height:55px}
-.logo span{
-  font-size:24px;
-  font-weight:800;
-  color:#1B5E20;
-}
-
-/* NAV */
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:30px;
-  margin:0;
-  padding:0;
-}
-nav a{
-  color:#333;
-  font-weight:600;
-}
+.logo span{font-size:24px;font-weight:800;color:#1B5E20}
+nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+nav a{color:#333;font-weight:600}
 nav a:hover{color:#4CAF50}
 
 /* HERO */
@@ -64,113 +33,62 @@ nav a:hover{color:#4CAF50}
   linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
   url("https://cdn1.modernadventure.com/app/uploads/2024/04/moad-morocco-medina-souks-46.jpg")
   center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;
 }
-.hero h1{
-  font-size:56px;
-  font-weight:900;
-}
-.hero p{
-  font-size:20px;
-  max-width:700px;
-  margin:auto;
-}
+.hero h1{font-size:56px;font-weight:900}
+.hero p{font-size:20px;max-width:700px;margin:auto}
 
 /* SECTION */
-section{
-  max-width:1300px;
-  margin:auto;
-  padding:80px 20px;
-}
+section{max-width:1300px;margin:auto;padding:80px 20px}
 .section-title{
-  text-align:center;
-  font-size:36px;
-  color:#1B5E20;
-  margin-bottom:50px;
+  text-align:center;font-size:36px;color:#1B5E20;margin-bottom:50px
 }
 
-/* PRODUCTS */
-.products{
+/* GRID */
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
-.product{
-  background:#fff;
-  border-radius:16px;
-  padding:20px;
+.card{
+  background:#fff;padding:25px;border-radius:16px;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
   text-align:center;
 }
-.product img{
-  height:220px;
-  object-fit:contain;
-  margin-bottom:15px;
+.card img{
+  height:160px;object-fit:contain;margin-bottom:15px;
 }
-.product h3{
-  margin:10px 0;
-}
-.product p{
-  font-size:15px;
-  color:#555;
-}
+
+/* PRODUCTS */
+.product img{height:220px}
 .product a{
-  display:inline-block;
-  margin-top:15px;
-  background:#4CAF50;
-  color:#fff;
-  padding:12px 25px;
-  border-radius:50px;
-  font-weight:600;
+  display:inline-block;margin-top:15px;
+  background:#4CAF50;color:#fff;
+  padding:12px 25px;border-radius:50px;font-weight:600;
 }
 .product a:hover{background:#388E3C}
 
 /* CONTACT */
 .contact-box{
-  background:#fff;
-  padding:40px;
-  border-radius:16px;
+  background:#fff;padding:40px;border-radius:16px;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
-  max-width:700px;
-  margin:auto;
-  text-align:center;
-}
-.contact-box p{
-  font-size:17px;
-  margin:12px 0;
+  max-width:700px;margin:auto;text-align:center;
 }
 
 /* FOOTER */
 footer{
-  background:#1B5E20;
-  color:#fff;
-  text-align:center;
-  padding:30px 20px;
+  background:#1B5E20;color:#fff;
+  text-align:center;padding:30px 20px;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:white;
-  width:65px;
-  height:65px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:32px;
-  box-shadow:0 5px 15px rgba(0,0,0,.3);
-  z-index:9999;
-}
-.whatsapp-float:hover{
-  background:#1ebe5d;
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;color:#fff;
+  width:65px;height:65px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 </style>
 </head>
@@ -185,7 +103,7 @@ footer{
     </div>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="#brands">Our Brands</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -193,54 +111,84 @@ footer{
   </div>
 </header>
 
-<div class="hero" id="home">
+<div class="hero">
   <div>
     <h1>Wholesale Food Distribution</h1>
-    <p>Trusted Moroccan supplier for retailers, supermarkets & wholesalers.</p>
+    <p>Reliable Moroccan supplier for retailers & wholesalers</p>
   </div>
 </div>
 
+<!-- OUR BRANDS -->
+<section id="brands" style="background:#f8fff8">
+  <h2 class="section-title">Our Brands</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://www.acquistapace.com/wp-content/uploads/2023/05/Mina-Products-1024x606.webp">
+      <h3>قطوف الغالية</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1576618148400-108302661fd8">
+      <h3>Pet Food</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://www.seriouseats.com/thmb/WY56FfGQPsc6exm3TSgZ1jrKbpQ=/1500x0/filters:no_upscale()">
+      <h3>Tuna</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://wholegrainscouncil.org/sites/default/files/Assorted-grains-nuts-beans.jpg">
+      <h3>Legumes & Rice</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
+      <h3>Corn (Maïs)</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc">
+      <h3>Mushrooms</h3>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
 <section id="products">
-  <h2 class="section-title">Our Products</h2>
+  <h2 class="section-title">Wholesale Products</h2>
 
-  <div class="products">
+  <div class="grid">
 
-    <div class="product">
+    <div class="card product">
       <img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg">
       <h3>Orinex Cotton</h3>
-      <p>High quality cotton – Wholesale supply</p>
-      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Orinex%20Cotton%20wholesale">Request Quote</a>
+      <p>Wholesale supply</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Orinex%20Cotton">Request Quote</a>
     </div>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg">
-      <h3>Trash Bags</h3>
-      <p>Strong & durable – Bulk orders</p>
-      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Trash%20Bags%20wholesale">Request Quote</a>
-    </div>
-
-    <div class="product">
-      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png">
+    <div class="card product">
+      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f.png">
       <h3>Fresh Mushrooms</h3>
-      <p>Wholesale food supply</p>
-      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Fresh%20Mushrooms%20wholesale">Request Quote</a>
+      <p>Wholesale food</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Mushrooms">Request Quote</a>
     </div>
 
-    <div class="product">
-      <img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434.jpg">
-      <h3>Orinex Charcoal</h3>
-      <p>Premium charcoal – Wholesale</p>
-      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Orinex%20Charcoal%20wholesale">Request Quote</a>
+    <div class="card product">
+      <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
+      <h3>Corn</h3>
+      <p>Bulk orders</p>
+      <a href="https://wa.me/212650792262?text=Hello%20I%20want%20Corn">Request Quote</a>
     </div>
 
   </div>
 </section>
 
 <section id="contact">
-  <h2 class="section-title">Contact Us</h2>
+  <h2 class="section-title">Contact</h2>
   <div class="contact-box">
-    <p><strong>📍 Address:</strong> Salé, Morocco</p>
-    <p><strong>📞 Manager:</strong> Ismail Essamae</p>
+    <p><strong>Manager:</strong> Ismail Essamae</p>
     <p><strong>WhatsApp:</strong> +212 6 50 79 22 62</p>
     <p><strong>Email:</strong> contact@sibatradefood.ma</p>
   </div>
@@ -250,12 +198,7 @@ footer{
 © 2012–2025 SIBA TRADE FOOD — All Rights Reserved
 </footer>
 
-<!-- WhatsApp Button -->
-<a class="whatsapp-float"
-   href="https://wa.me/212650792262"
-   target="_blank">
-  💬
-</a>
+<a class="whatsapp" href="https://wa.me/212650792262" target="_blank">💬</a>
 
 </body>
 </html>
