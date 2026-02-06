@@ -51,6 +51,22 @@
   .cta-btn:hover {background:#388E3C;}
   .hamburger {display:none; cursor:pointer;}
   .hamburger div {width:28px; height:3px; background:#333; margin:5px 0; transition:0.3s;}
+  /* Cart Icon */
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
   /* HERO */
   .hero {
     height:90vh;
@@ -114,6 +130,57 @@
     height:220px;
     border-radius:12px;
   }
+  .product-card button {
+    background:#4CAF50;
+    color:#fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .product-card button:hover {
+    background:#388E3C;
+  }
+  /* Cart Modal */
+  .cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .cart-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  #cart-items li {
+    margin-bottom: 10px;
+  }
   /* CONTACT */
   .contact-info {
     background:#fff;
@@ -168,6 +235,9 @@
       </ul>
     </nav>
     <a class="cta-btn" href="#products">Our Products</a>
+    <div class="cart-icon" onclick="openCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
   </div>
 </header>
 <!-- HERO -->
@@ -208,10 +278,30 @@
 <section id="products">
   <h2 class="section-title">Featured Products</h2>
   <div class="grid">
-    <div class="card product-card"><img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg" alt="Orinex Cotton"></div>
-    <div class="card product-card"><img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg" alt="Trash Bags"></div>
-    <div class="card product-card"><img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png" alt="Freshly Mushrooms"></div>
-    <div class="card product-card"><img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434-PFDrp2NK8HALfC74eGyQc3o32lzzSBIQwUYjqrVv.jpg" alt="Orinex Charcoal"></div>
+    <div class="card product-card" data-product="Orinex Cotton" data-price="50">
+      <img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg" alt="Orinex Cotton">
+      <h3>Orinex Cotton</h3>
+      <p>Price: 50 MAD</p>
+      <button onclick="addToCart('Orinex Cotton', 50)">Add to Cart</button>
+    </div>
+    <div class="card product-card" data-product="Trash Bags" data-price="30">
+      <img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg" alt="Trash Bags">
+      <h3>Trash Bags</h3>
+      <p>Price: 30 MAD</p>
+      <button onclick="addToCart('Trash Bags', 30)">Add to Cart</button>
+    </div>
+    <div class="card product-card" data-product="Freshly Mushrooms" data-price="40">
+      <img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png" alt="Freshly Mushrooms">
+      <h3>Freshly Mushrooms</h3>
+      <p>Price: 40 MAD</p>
+      <button onclick="addToCart('Freshly Mushrooms', 40)">Add to Cart</button>
+    </div>
+    <div class="card product-card" data-product="Orinex Charcoal" data-price="60">
+      <img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434-PFDrp2NK8HALfC74eGyQc3o32lzzSBIQwUYjqrVv.jpg" alt="Orinex Charcoal">
+      <h3>Orinex Charcoal</h3>
+      <p>Price: 60 MAD</p>
+      <button onclick="addToCart('Orinex Charcoal', 60)">Add to Cart</button>
+    </div>
   </div>
 </section>
 <!-- CONTACT -->
@@ -229,10 +319,65 @@
 <footer>
   © 2012–2025 SIBA TRADE FOOD — All Rights Reserved
 </footer>
+<!-- Cart Modal -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-content">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: <span id="cart-total">0</span> MAD</p>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</div>
 <script>
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('show');
 }
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function updateCartCount() {
+  document.getElementById('cart-count').innerText = cart.length;
+}
+
+function addToCart(product, price) {
+  cart.push({product, price});
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  alert(`${product} added to cart!`);
+}
+
+function openCart() {
+  document.getElementById('cartModal').style.display = "block";
+  displayCartItems();
+}
+
+function closeCart() {
+  document.getElementById('cartModal').style.display = "none";
+}
+
+function displayCartItems() {
+  const cartItems = document.getElementById('cart-items');
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.innerText = `${item.product} - ${item.price} MAD`;
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+  document.getElementById('cart-total').innerText = total;
+}
+
+function checkout() {
+  alert('Proceeding to checkout... (This is a simulation)');
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  closeCart();
+}
+
+updateCartCount();
 </script>
 </body>
 </html>
