@@ -7,151 +7,135 @@
 <style>
   body {margin:0; font-family:'Segoe UI',Arial,sans-serif; background:#fafafa; color:#222; line-height:1.6;}
   a {text-decoration:none;}
-
   /* HEADER */
   header {
-    background:#fff; 
-    box-shadow:0 2px 10px rgba(0,0,0,0.08); 
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
     position:sticky; top:0; z-index:1000;
   }
   .container {max-width:1300px; margin:auto; padding:15px 20px; display:flex; align-items:center; justify-content:space-between;}
-  .logo {LOGO.PNG}
-    display:flex; 
-    align-items:center; 
+  .logo {
+    display:flex;
+    align-items:center;
     gap:15px;
   }
-  .logo img {"images/logo.png" alt="SIBA Logo" style="height:55px;">
-      <span class="logo-text">SIBA TRADE FOOD</span>
-    </div>
-    height:70px;
-  }
-  .logo-text {<img src="images/logo.png" alt="SIBA Logo" style="height:55px;">
-      <span class="logo-text">SIBA TRADE FOOD</span>
-    </div>
-    font-size:24px; 
-    font-weight:800; 
-    color:#1B5E20; 
+  .logo img {height:55px;}
+  .logo-text {
+    font-size:24px;
+    font-weight:800;
+    color:#1B5E20;
     letter-spacing:1px;
   }
-
   nav ul {
-    display:flex; 
-    list-style:none; 
-    gap:30px; 
-    margin:0; 
+    display:flex;
+    list-style:none;
+    gap:30px;
+    margin:0;
     padding:0;
   }
   nav a {
-    color:#333; 
-    font-weight:600; 
+    color:#333;
+    font-weight:600;
     font-size:15px;
     transition:0.3s;
   }
   nav a:hover {color:#4CAF50;}
-
   .cta-btn {
-    background:#4CAF50; 
-    color:#fff; 
-    padding:12px 28px; 
-    border-radius:50px; 
+    background:#4CAF50;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:50px;
     font-weight:600;
     transition:0.3s;
   }
   .cta-btn:hover {background:#388E3C;}
-
   .hamburger {display:none; cursor:pointer;}
   .hamburger div {width:28px; height:3px; background:#333; margin:5px 0; transition:0.3s;}
-
   /* HERO */
   .hero {
-    height:90vh; 
+    height:90vh;
     min-height:500px;
     background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1606787366850-de6330127b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-    display:flex; 
-    align-items:center; 
-    justify-content:center; 
-    text-align:center; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     color:white;
   }
   .hero h1 {
-    font-size:58px; 
-    font-weight:900; 
+    font-size:58px;
+    font-weight:900;
     margin:0 0 20px 0;
   }
   .hero p {
-    font-size:20px; 
-    max-width:700px; 
+    font-size:20px;
+    max-width:700px;
     margin:auto;
   }
-
   /* SECTIONS */
   section {padding:80px 20px; max-width:1300px; margin:auto;}
   .section-title {
-    text-align:center; 
-    font-size:36px; 
-    color:#1B5E20; 
+    text-align:center;
+    font-size:36px;
+    color:#1B5E20;
     margin-bottom:60px;
     position:relative;
   }
   .section-title::after {
-    content:''; 
-    width:80px; 
-    height:4px; 
-    background:#4CAF50; 
-    position:absolute; 
-    bottom:-15px; 
-    left:50%; 
+    content:'';
+    width:80px;
+    height:4px;
+    background:#4CAF50;
+    position:absolute;
+    bottom:-15px;
+    left:50%;
     transform:translateX(-50%);
   }
-
   .grid {
-    display:grid; 
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); 
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
     gap:30px;
   }
   .card {
-    background:#fff; 
-    padding:30px; 
-    border-radius:16px; 
-    text-align:center; 
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    text-align:center;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     transition:0.3s;
   }
   .card:hover {transform:translateY(-10px);}
   .card img {
-    height:110px; 
-    object-fit:contain; 
+    height:110px;
+    object-fit:contain;
     margin-bottom:20px;
   }
   .product-card img {
-    height:220px; 
+    height:220px;
     border-radius:12px;
   }
-
   /* CONTACT */
   .contact-info {
-    background:#fff; 
-    padding:40px; 
-    border-radius:16px; 
+    background:#fff;
+    padding:40px;
+    border-radius:16px;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    max-width:700px; 
+    max-width:700px;
     margin:auto;
   }
   .contact-info p {
-    font-size:17px; 
+    font-size:17px;
     margin:15px 0;
   }
   .contact-info strong {color:#1B5E20;}
-
   /* FOOTER */
   footer {
-    background:#1B5E20; 
-    color:white; 
-    text-align:center; 
-    padding:40px 20px; 
+    background:#1B5E20;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
     font-size:15px;
   }
-
   /* RESPONSIVE */
   @media (max-width: 992px) {
     .hero h1 {font-size:44px;}
@@ -163,7 +147,6 @@
 </style>
 </head>
 <body>
-
 <!-- HEADER -->
 <header>
   <div class="container">
@@ -172,7 +155,6 @@
     <img src="images/logo.png" alt="SIBA Logo" style="height:55px;">
       <span class="logo-text">SIBA TRADE FOOD</span>
     </div>
-
     <nav>
       <div class="hamburger" onclick="toggleMenu()">
         <div></div><div></div><div></div>
@@ -185,11 +167,9 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
     <a class="cta-btn" href="#products">Our Products</a>
   </div>
 </header>
-
 <!-- HERO -->
 <div class="hero" id="home">
   <div>
@@ -197,7 +177,6 @@
     <p>Premium food distribution across Morocco – Quality products, trusted brands, delivered with excellence.</p>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">About Us</h2>
@@ -207,42 +186,34 @@
     </div>
   </div>
 </section>
-
 <!-- BRANDS -->
 <section id="brands" style="background:#f8fff8;">
   <h2 class="section-title">Our Exclusive Brands</h2>
   <div class="grid">
     <!-- Brand 1: 9otof الغالية بالعربية -->
-    <div class="card"><img src="https://i.ibb.co/brands/qotof.png" alt="قطوف الغالية"><h3>قطوف الغالية</h3></div>
-
+    <div class="card"><img src="https://www.acquistapace.com/wp-content/uploads/2023/05/Mina-Products-1024x606.webp" alt="قطوف الغالية"><h3>قطوف الغالية</h3></div>
     <!-- Brand 2: Cat, Dog, Bird Food -->
-    <div class="card"><img src="https://i.ibb.co/brands/meglior.png" alt="Pet Food"><h3>Cat, Dog & Bird Food</h3></div>
-
+    <div class="card"><img src="https://images.unsplash.com/photo-1576618148400-108302661fd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Pet Food"><h3>Cat, Dog & Bird Food</h3></div>
     <!-- Brand 3: Tuna -->
-    <div class="card"><img src="https://i.ibb.co/brands/tuna.png" alt="Tuna"><h3>أنواع مختلفة من التونة</h3></div>
-
+    <div class="card"><img src="https://www.seriouseats.com/thmb/WY56FfGQPsc6exm3TSgZ1jrKbpQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/202400827-TunaInWaterTasteTest-Amanda-Suarez-5-234c878c2bd747678e67b5ccef51dfcf.jpg" alt="Tuna"><h3>أنواع مختلفة من التونة</h3></div>
     <!-- Brand 4: Pasta -->
-    <div class="card"><img src="https://i.ibb.co/brands/pasta.png" alt="Tria Pasta"><h3>Tria Pasta</h3></div>
-
+    <div class="card"><img src="https://dims.apnews.com/dims4/default/ec61206/2147483647/strip/true/crop/8640x4860+0+450/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F38%2Fae%2Fc27127a4f8ddd7cfbb445defc591%2Fb5827bd547df40458576865013abe05f" alt="Tria Pasta"><h3>Tria Pasta</h3></div>
     <!-- Brand 5: 9atani, Rice, Lentils, Beans, Chickpeas, Fava Beans -->
-    <div class="card"><img src="https://i.ibb.co/brands/9atani.png" alt="9atani & others"><h3>قطاني: رز، عدس، لوبيا، حمص، جلبانة، فول</h3></div>
-
+    <div class="card"><img src="https://wholegrainscouncil.org/sites/default/files/thumbnails/image/Assorted-grains-nuts-beans-iStock_000019335226.jpg" alt="9atani & others"><h3>قطاني: رز، عدس، لوبيا، حمص، جلبانة، فول</h3></div>
     <!-- Brand 6: Dates -->
-    <div class="card"><img src="https://i.ibb.co/brands/dattes.png" alt="Dates"><h3>تمر: تونسية، جزائرية، سكري</h3></div>
+    <div class="card"><img src="https://c8.alamy.com/comp/DRKAJX/tunisian-dates-on-bamboo-tray-DRKAJX.jpg" alt="Dates"><h3>تمر: تونسية، جزائرية، سكري</h3></div>
   </div>
 </section>
-
 <!-- PRODUCTS -->
 <section id="products">
   <h2 class="section-title">Featured Products</h2>
   <div class="grid">
-    <div class="card product-card"><img src="https://i.ibb.co/products/orinex-cotton.jpg" alt="Orinex Cotton"></div>
-    <div class="card product-card"><img src="https://i.ibb.co/products/trash-bags.jpg" alt="Trash Bags"></div>
-    <div class="card product-card"><img src="https://i.ibb.co/products/freshly-mushroom.jpg" alt="Freshly Mushrooms"></div>
-    <div class="card product-card"><img src="https://i.ibb.co/products/orinex-charcoal.jpg" alt="Orinex Charcoal"></div>
+    <div class="card product-card"><img src="https://optcl.net/wp-content/uploads/2025/05/673c2c470afd3eee694c1dde9ab536da55904079a42d9-scaled.jpg" alt="Orinex Cotton"></div>
+    <div class="card product-card"><img src="https://m.media-amazon.com/images/I/41JOrNnOTdL._AC_UF894,1000_QL80_.jpg" alt="Trash Bags"></div>
+    <div class="card product-card"><img src="https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91744d5f-1ec7-4c94-be4b-94e42ede2d05-retina-large.png" alt="Freshly Mushrooms"></div>
+    <div class="card product-card"><img src="https://cdn.salla.sa/gZXPgE/57a27d33-1f6d-4a0c-a369-bff8cb90dc4a-1000x562.2641509434-PFDrp2NK8HALfC74eGyQc3o32lzzSBIQwUYjqrVv.jpg" alt="Orinex Charcoal"></div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact" style="background:#f8fff8;">
   <h2 class="section-title">Contact Us</h2>
@@ -254,12 +225,10 @@
     <p><strong>✉️ Email:</strong> contact@sibatradefood.ma</p>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   © 2012–2025 SIBA TRADE FOOD — All Rights Reserved
 </footer>
-
 <script>
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('show');
